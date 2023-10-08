@@ -8,3 +8,34 @@ body
 {
     background-color:rgb(4, 53, 53);
 }
+
+.card
+{
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #7700fe, #85009a);
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.search
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search input
+{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #1b1919;
+    padding: 10px 25px;
+    height: 60px;
+    
+}
