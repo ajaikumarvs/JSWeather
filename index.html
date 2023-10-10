@@ -39,7 +39,8 @@
 <script>
     const apikey = "049119c806e7d0bd8c64a7353de1710b"
     const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-    
+    const searchbox = document.querySelector(".search input");
+    const searchbutton = document.querySelector(".search button");
     
     async function checkWeather(city)
     {
@@ -55,6 +56,9 @@
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
     }
 
+    searchbutton.addEventListener("click", ()=>{
+        checkWeather(searchbox.value);
+    })
 checkWeather();
 </script>
 
