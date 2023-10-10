@@ -15,8 +15,8 @@
     </div>
     <div class="weather">
         <img src="images/clouds.png" class="weather-icon">
-        <h1 class="temp">22°C</h1>
-        <h2 class="city">Chennai</h2>
+        <h1 class="temp">0°C</h1>
+        <h2 class="city">City</h2>
         <div class="details">
             <div class="col">
                 <img src="images/humidity.png">
@@ -38,19 +38,19 @@
 
 <script>
     const apikey = "049119c806e7d0bd8c64a7353de1710b"
-    const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Chennai";
+    const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
     
     
-    async function checkWeather()
+    async function checkWeather(city)
     {
-    const response = await fetch(apiurl + `&appid=${apikey}`);
+    const response = await fetch(apiurl + city + `&appid=${apikey}`);
     var data = await response.json();
 
 
     console.log(data);
 
     document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".temp").innerHTML = data.main.temp + "°C";
+    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
     }
